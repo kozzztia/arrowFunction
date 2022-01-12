@@ -1,0 +1,43 @@
+.main {
+    background: #eee;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menu {
+        min-width: 500px;
+        height: 500px;
+        background: #000;
+        text-align: center;
+        padding: 20px;
+        .title {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .monitor {
+            max-width: 300px;
+            min-height: 200px;
+            background: #fff;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+            border: 1px solid #000;
+            .text {
+                font-size: 20px;
+            }
+        } 
+        .input1,.input2,.input3,.push {
+            padding: 2px 10px;
+            border: 1px solid #000;
+            width: 300px;
+            background: yellow;
+        }
+        .push{
+            background: red;
+        }
+
+}
+
+}
