@@ -13,7 +13,7 @@ const text = document.querySelectorAll('.text');
 
 // -------------------------tasks
 const ar = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+    11, 2, 3, 4, 25, 6, 7, 8, 9, 10, 12
 ]
 const txt = 'string war array'
 // --------------------------------test
@@ -154,14 +154,83 @@ let counter = 0;
 // count.call(text[1], ar)
 
 
-function f10(...args) {
-    this.innerHTML = args.reduce((sum, item) => sum - item)
+// function f10(...args) {
+//     this.innerHTML = args.reduce((sum, item) => sum - item)
+//     console.log(this)
+// }
+// const f101 = f10.bind(title);
+
+// push.onclick = () => f101(...ar)
+
+// ---------------------task 1
+
+function task1() {
     console.log(this)
+    this.innerHTML = 'Task1'
 }
-const f101 = f10.bind(title);
-
-push.onclick = () => f101(...ar)
+// const task1b = task1.bind(push)
 
 
+// ------------------task2
 
+// push.onclick = () => {
+//     task1.call(text[1])
+// }
+// ----------------------task3
 
+function max3(a, b, c) {
+    this.innerHTML = a + b + c;
+}
+
+// max3.call(title, 2, 3)
+
+// ---------------------task4
+
+// push.onclick = () => max3.call(text[1], 22, 13);
+
+// -----------------------task5
+
+// function task5() {
+//     console.log(this.textContent);
+//     if (this.textContent.length === 0) {
+//         this.textContent = "none";
+//         console.log(this.textContent);
+//     }
+// }
+// task5.call(title)
+// task5.call(push3)
+
+// ---------------------task6
+
+// task1.apply(text[3])
+
+// -------------------task7
+
+// max3.apply(text[2], [1, 2, 3,])
+
+// ----------------------task8
+// let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+// function rundomNumber(numberOfRundom) {
+//     return Math.floor(Math.random() * numberOfRundom.length)
+// }
+
+// function findNumber(arr, callback) {
+//     let num = arr[callback(arr)];
+//     this.innerHTML = num;
+// }
+
+// push.onclick = () => findNumber.call(title, number, rundomNumber)
+
+//-------------------------------task9
+
+function task9(...args) {
+    const reduced = args.reduce((max, item) => max > item ? max : item)
+    this.innerHTML = reduced
+}
+
+function sort9(array) {
+    const sorted = array.sort((a, b) => b - a)
+    this.innerHTML = sorted;
+}
+task9.apply(title, [1, 2, 3, 4, 5, 6, 66])
+sort9.call(text[1], ar)
