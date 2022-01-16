@@ -13,7 +13,7 @@ const text = document.querySelectorAll('.text');
 
 // -------------------------tasks
 const ar = [
-    11, 2, 3, 4, 25, 6, 7, 8, 9, 10, 12
+    11, 2, 3, 4, 25, 6, 7, 8, 9, 10, 12,
 ]
 const txt = 'string war array'
 // --------------------------------test
@@ -164,10 +164,10 @@ let counter = 0;
 
 // ---------------------task 1
 
-function task1() {
-    console.log(this)
-    this.innerHTML = 'Task1'
-}
+// function task1() {
+//     console.log(this)
+//     this.innerHTML = 'Task1'
+// }
 // const task1b = task1.bind(push)
 
 
@@ -223,14 +223,62 @@ function max3(a, b, c) {
 
 //-------------------------------task9
 
-function task9(...args) {
-    const reduced = args.reduce((max, item) => max > item ? max : item)
-    this.innerHTML = reduced
+// function task9(...args) {
+//     const reduced = args.reduce((max, item) => max < item ? max : item)
+//     this.innerHTML = reduced
+// }
+
+// function sort9(array) {
+//     const sorted = array.sort((a, b) => b - a)
+//     // const sorted = array.sort((a, b) => a - b)
+//     this.innerHTML = sorted;
+// }
+// task9.apply(title, [...ar])
+// sort9.call(text[1], ar)
+
+// task10
+
+// function task10(array) {
+//     let ansver = array.some((item) => {
+//         return typeof item === 'boolean'
+//     })
+//     this.innerHTML = ansver;
+// }
+// const task101 = task10.bind(text[0])
+// task10.call(title, ar)
+// task101(ar)
+
+// task 11
+
+// function task11(array) {
+//     let taskContent = array.reduce((acc, arg) => acc > arg ? acc : arg)
+//     this.innerHTML = taskContent
+// }
+
+// const taskOut11 = task11.bind(title, ar)
+
+// taskOut11.call()
+
+// task12
+// function max12(...args) {
+//     this.innerHTML = args.reduce((prev, arg) => {
+//         return prev + arg
+//     })
+// }
+// const newmax12 = max12.bind(title)
+// newmax12(...ar, 1, 2)
+
+// task 13
+
+// function task13(...args) {
+//     this.innerHTML = args.sort((a, b) => b - a)
+// }
+// const newtask13 = task13.bind(text[1])
+// newtask13(...ar, 40)
+function task14(...args) {
+    this.innerHTML = args.reduce((prev, next) => prev + next)
 }
 
-function sort9(array) {
-    const sorted = array.sort((a, b) => b - a)
-    this.innerHTML = sorted;
-}
-task9.apply(title, [1, 2, 3, 4, 5, 6, 66])
-sort9.call(text[1], ar)
+const newtask14 = task14.bind(title)
+
+push.onclick = () => newtask14(...ar, 2, 5, 7, 9)
